@@ -32,7 +32,6 @@ const getPublicUrl = appPackageJson => envPublicUrl || require(appPackageJson).h
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
 function getServedPath(appPackageJson) {
   const publicUrl = getPublicUrl(appPackageJson);
-  console.log(1, publicUrl);
   const servedUrl = envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/');
   return ensureSlash(servedUrl, true);
 }
